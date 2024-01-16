@@ -76,7 +76,7 @@ function App() {
           }}
         />
         <div
-          className={`w-[24rem] max-h-[12rem] absolute top-8 z-10 bg-[#f9f8f8] rounded-md custom-shadow overflow-y-scroll overflow-x-hidden${
+          className={`w-[24rem] max-h-[12rem] absolute top-8 z-10 bg-[#f9f8f8] rounded-md custom-shadow overflow-y-scroll overflow-x-hidden ${
             toggleOptions == false ? "hidden" : null
           }`}
         >
