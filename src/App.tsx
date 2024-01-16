@@ -4,6 +4,7 @@ import UserComponent from "./components/UserComponent";
 import React from "react";
 import { User } from "../lib/data";
 import UserCard from "./components/UserCard";
+import Header from "./components/header";
 
 type Options = boolean | "";
 
@@ -20,8 +21,8 @@ function App() {
     return regexPattern.test(user.name);
   };
 
-  const handleSelect = (id : number) => {
-    console.log(id);
+  const handleSelect = async(id : number) => {
+    await delay(60)
     const newPinnedUser = users.filter((user) => {return user.id == id})
     setPinnedUsers((pinnedUsers) => [...pinnedUsers, ...newPinnedUser]);
   }
@@ -38,7 +39,7 @@ function App() {
   }
 
   const handleBlur = async() => {
-    await delay(300)
+    await delay(250)
     setToggleOptions(!toggleOptions);
   };
 
@@ -51,7 +52,9 @@ function App() {
   };
 
   return (
-    <div className="w-full h-full sm:w-[42rem] sm:max-h-[20rem]  flex flex-wrap justify-start items-center gap-2 p-2 border-b-2 border-black">
+    <>
+    <Header/>
+    <div className="w-full h-full sm:w-[42rem] sm:max-h-[20rem] flex flex-wrap justify-start items-center gap-2 p-2 border-b-2 border-black">
       {
         pinnedUsers.map((user, index) =>
             (
@@ -90,6 +93,7 @@ function App() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
