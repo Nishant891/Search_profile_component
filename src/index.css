@@ -7,7 +7,7 @@
 	background-color: #F5F5F5;
 }
 
-#style-1::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
 	background-color: #000000;
 }
 
